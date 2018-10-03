@@ -1,7 +1,7 @@
 # vxrail-notes
 
 
-Configure the NICs because the Intel X710 cards do not work well with our Cisco switches. They fail to autonegotiate and cause the ports to enter admin down due to flapping.<br>
+Configure the NICs because the Intel X710 cards do not work well with some Cisco switches. They fail to autonegotiate and cause the ports to enter admin down due to flapping.<br>
 esxcli network nic down -n vmnic0<br>
 esxcli network nic set --speed=10000 --duplex=full --nic-name=vmnic0<br>
 esxcli network nic up -n vmnic0<br>
